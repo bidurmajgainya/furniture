@@ -11,45 +11,47 @@ import { FiSearch } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
-  const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+  const [isCategoryHovered, setIsCategoryHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileCategoryOpen, setMobileCategoryOpen] = useState(false);
 
   const categories = ['Living Room', 'Bedroom', 'Dining Room', 'Office', 'Outdoor'];
 
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="hidden xl:flex justify-between items-center py-4 px-10 bg-white shadow sticky top-0 z-50">
+      <div className="hidden xl:flex justify-between items-center py-4 px-10 bg-white shadow-lg sticky top-0 z-50">
         <div className="flex items-center">
-          <h1 className="text-3xl font-medium">AIKE</h1>
+          <h1 className="text-3xl font-semibold text-gray-800">AIKE</h1>
           <nav className="ml-20">
-            <ul className="flex items-center space-x-6 font-medium text-[16px]">
-              <li className="relative">
-                <button
-                  className="flex items-center"
-                  onClick={() => setIsCategoryOpen(!isCategoryOpen)}
-                >
+            <ul className="flex items-center space-x-8 font-medium text-gray-700">
+              <li 
+                className="relative group"
+                onMouseEnter={() => setIsCategoryHovered(true)}
+                onMouseLeave={() => setIsCategoryHovered(false)}
+              >
+                <button className="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">
                   Category
                   <HiOutlineChevronDown
                     className={`ml-1 transition-transform ${
-                      isCategoryOpen ? 'rotate-180' : ''
+                      isCategoryHovered ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
                 <AnimatePresence>
-                  {isCategoryOpen && (
+                  {isCategoryHovered && (
                     <motion.div
-                      initial={{ opacity: 0, y: -10 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.2 }}
-                      className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-50"
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute left-0 mt-1 w-56 bg-white shadow-xl rounded-lg py-2 z-50 border border-gray-100"
                     >
                       {categories.map((category, index) => (
                         <a
                           key={index}
                           href="#"
-                          className="block px-4 py-2 hover:bg-gray-100"
+                          className="block px-4 py-3 hover:bg-gray-50 transition-colors text-gray-700"
                         >
                           {category}
                         </a>
@@ -58,39 +60,55 @@ const Navbar = () => {
                   )}
                 </AnimatePresence>
               </li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Shop</a></li>
-              <li><a href="#">Contact us</a></li>
+              <li><a href="#" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">About us</a></li>
+              <li><a href="#" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Shop</a></li>
+              <li><a href="#" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Contact us</a></li>
             </ul>
           </nav>
         </div>
 
         <div className="flex items-center space-x-6">
           <div className="relative">
-            <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 cursor-pointer" />
+            <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
             <input
               type="text"
-              className="pl-10 pr-4 py-2 outline-0 border-b border-gray-300"
+              className="pl-10 pr-4 py-2 outline-none border-b border-gray-300 focus:border-gray-500 transition-colors w-64"
               placeholder="Search..."
             />
           </div>
-          <div className="flex items-center space-x-4 text-2xl cursor-pointer">
-            <HiOutlineShoppingCart />
-            <HiOutlineHeart />
-            <HiOutlineUser />
+          <div className="flex items-center space-x-5">
+            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors relative">
+              <HiOutlineHeart className="text-xl text-gray-700" />
+              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+            </button>
+            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors relative">
+              <HiOutlineShoppingCart className="text-xl text-gray-700" />
+              <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">5</span>
+            </button>
+            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
+              <HiOutlineUser className="text-xl text-gray-700" />
+            </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Navbar */}
-      <div className="xl:hidden flex justify-between items-center p-4 bg-white shadow sticky top-0 z-50">
-        <button onClick={() => setIsMobileMenuOpen(true)}>
-          <FaBars className="text-2xl" />
+      <div className="xl:hidden flex justify-between items-center p-4 bg-white shadow-lg sticky top-0 z-50">
+        <button 
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        >
+          <FaBars className="text-xl text-gray-700" />
         </button>
-        <h1 className="text-2xl font-medium">AIKE</h1>
-        <div className="flex items-center space-x-4 text-xl">
-          <HiOutlineShoppingCart />
-          <HiOutlineUser />
+        <h1 className="text-2xl font-bold text-gray-800">AIKE</h1>
+        <div className="flex items-center space-x-4">
+          <button className="p-2 rounded-full hover:bg-gray-100 transition-colors relative">
+            <HiOutlineShoppingCart className="text-xl text-gray-700" />
+            <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">5</span>
+          </button>
+          <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
+            <HiOutlineUser className="text-xl text-gray-700" />
+          </button>
         </div>
       </div>
 
@@ -101,7 +119,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="xl:hidden fixed inset-0 z-50 flex"
+            className="xl:hidden fixed inset-0 z-50"
           >
             {/* Overlay */}
             <div
@@ -109,83 +127,115 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             ></div>
 
-            {/* Sidebar Panel - Full Width */}
+            {/* Sidebar Panel */}
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="relative w-full h-full bg-white overflow-y-auto z-50"
+              className="relative w-4/5 max-w-sm h-full bg-white shadow-xl z-50 flex flex-col"
             >
-              <div className="p-4 flex justify-between items-center">
-                <h2 className="text-xl font-medium">Menu</h2>
-                <button onClick={() => setIsMobileMenuOpen(false)}>
-                  <MdOutlineClose className="text-2xl" />
+              {/* Header */}
+              <div className="p-4 border-b flex justify-between items-center">
+                <h2 className="text-xl font-bold text-gray-800">Menu</h2>
+                <button 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
+                >
+                  <MdOutlineClose className="text-xl text-gray-700" />
                 </button>
               </div>
 
               {/* Search */}
-              <div className="p-4">
+              <div className="p-4 border-b">
                 <div className="relative">
-                  <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2" />
+                  <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
                   <input
                     type="text"
-                    className="w-full pl-10 pr-4 py-2 border rounded-lg"
+                    className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300 focus:border-transparent"
                     placeholder="Search..."
                   />
                 </div>
               </div>
 
               {/* Navigation Links */}
-              <nav className="p-4">
-                <ul className="space-y-4">
+              <nav className="flex-1 overflow-y-auto p-4">
+                <ul className="space-y-2">
                   <li>
                     <button
-                      className="flex items-center justify-between w-full"
-                      onClick={() => setIsCategoryOpen(!isCategoryOpen)}
+                      className="flex items-center justify-between w-full p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                      onClick={() => setMobileCategoryOpen(!mobileCategoryOpen)}
                     >
-                      <span>Category</span>
+                      <span className="font-medium">Category</span>
                       <HiOutlineChevronDown
                         className={`transition-transform ${
-                          isCategoryOpen ? 'rotate-180' : ''
+                          mobileCategoryOpen ? 'rotate-180' : ''
                         }`}
                       />
                     </button>
                     <AnimatePresence>
-                      {isCategoryOpen && (
+                      {mobileCategoryOpen && (
                         <motion.div
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="pl-4 mt-2 space-y-2 overflow-hidden"
+                          className="pl-4 overflow-hidden"
                         >
-                          {categories.map((category, index) => (
-                            <a key={index} href="#" className="block py-1 hover:text-gray-600">
-                              {category}
-                            </a>
-                          ))}
+                          <ul className="space-y-2 py-2">
+                            {categories.map((category, index) => (
+                              <li key={index}>
+                                <a 
+                                  href="#" 
+                                  className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                                >
+                                  {category}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </li>
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Interior Design</a></li>
-                  <li><a href="#">Product Recommendation</a></li>
+                  <li>
+                    <a href="#" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                      About us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                      Shop
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                      Contact us
+                    </a>
+                  </li>
                 </ul>
               </nav>
 
               {/* Bottom Links */}
-              <div className="p-4 bg-white">
+              <div className="p-4 border-t">
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="flex items-center">
-                      <HiOutlineHeart className="mr-2" /> Wishlist
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                    >
+                      <HiOutlineHeart className="mr-3 text-lg" />
+                      Wishlist
+                      <span className="ml-auto bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="flex items-center">
-                      <HiOutlineUser className="mr-2" /> Account
+                    <a 
+                      href="#" 
+                      className="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                    >
+                      <HiOutlineUser className="mr-3 text-lg" />
+                      Account
                     </a>
                   </li>
                 </ul>

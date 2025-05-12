@@ -13,7 +13,7 @@ const Hero = () => {
   ];
 
   return (
-    <div className="container mx-auto py-12 md:py-24 px-10">
+    <div className="container mx-auto pb-10 lg:pb-30 px-10">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         {/* Text Section */}
         <div className="lg:w-1/2">
