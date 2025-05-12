@@ -58,9 +58,9 @@ const Navbar = () => {
                   )}
                 </AnimatePresence>
               </li>
-              <li><a href="#">Promo</a></li>
-              <li><a href="#">Interior Design</a></li>
-              <li><a href="#">Product Recommendation</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Contact us</a></li>
             </ul>
           </nav>
         </div>
@@ -169,7 +169,7 @@ const Navbar = () => {
                       )}
                     </AnimatePresence>
                   </li>
-                  <li><a href="#">Promo</a></li>
+                  <li><a href="#">About us</a></li>
                   <li><a href="#">Interior Design</a></li>
                   <li><a href="#">Product Recommendation</a></li>
                 </ul>
