@@ -1,12 +1,171 @@
-# React + Vite
+Here's a simple but professional `README.md` file tailored for your furniture e-commerce website built with React and Vite:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  
 
-## Expanding the ESLint configuration
+### 📄 `README.md`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  
+
+```markdown
+
+# 🪑 AIKE Furniture — E-commerce Website
+
+  
+
+A modern and responsive e-commerce website for showcasing and selling premium imported furniture.
+
+  
+
+---
+
+  
+
+## 🚀 Features
+
+  
+
+- ✨ Beautiful landing page with full-width hero and footer
+
+- 🛒 Product listings with categories (Living Room, Bedroom, Dining, Outdoor)
+
+- 📱 Mobile-friendly and fully responsive design
+
+- 🌐 Social media integration with icons
+
+- ⚙️ Built using **React + Vite** for fast development
+
+  
+
+---
+
+  
+
+## 📂 Project Structure
+
+  
+
+```
+
+  
+
+ecommerce/
+
+├── public/
+
+├── src/
+
+│   ├── components/    # Reusable components like Footer, Navbar, ProductSection
+
+│   ├── pages/         # Landing page and future routes
+
+│   └── App.jsx        # Main app layout
+
+├── README.md
+
+├── package.json
+
+├── vite.config.js
+
+  
+
+````
+
+  
+
+---
+
+  
+
+## 🧑‍💻 Getting Started
+
+  
+
+### 1. Clone the repository
+
+  
+
+```bash
+
+git clone git@github.com:yourusername/ecommerce.git
+
+cd ecommerce
+
+````
+
+  
+
+### 2. Install dependencies
+
+  
+
+```bash
+
+npm install
+
+```
+
+  
+
+### 3. Run the project locally
+
+  
+
+```bash
+
+npm run dev
+
+```
+
+  
+
+---
+
+  
+
+## 📸 Preview
+
+  
+  ![[Screenshot 2025-05-12 at 21-36-04 Vite React.png]]
+  
+
+## 📬 Contact
+
+  
+
+For any inquiries, reach out to:
+
+  
+
+**Bidur Majgainya**
+
+📧 [majgianyabidur02@gmail.com](mailto:majgianyabidur02@gmail.com)
+
+  
+
+---
+
+  
+
+## 📜 License
+
+  
+
+This project is licensed under the [MIT License](LICENSE).
+
+  
+
+```
+
+  
+
+---
+
+  
+
+Let me know if you'd like to include screenshots, deployment instructions, or a `.gitignore` file too.
+
+```
