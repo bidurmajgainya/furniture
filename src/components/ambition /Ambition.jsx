@@ -4,7 +4,7 @@ import { HiOutlineClock } from "react-icons/hi2";
 
 const Ambition = () => {
     return (
-        <div className="container mx-auto py-10 px-10">
+        <div className="container mx-auto py-10 px-5 md:px-10">
             <div className="flex flex-col lg:flex-row gap-12 justify-between items-center">
                 <div className="w-full lg:w-130 mx-auto rounded-xl">
                     <img 

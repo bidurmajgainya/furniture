@@ -5,7 +5,7 @@ import { RiSofaLine } from 'react-icons/ri';
 
 const Benifits = () => {
   return (
-    <div className="px-6 md:px-15">
+    <div className="px-5 md:px-15">
       <span className="font-medium text-[#dc6400] text-xl">Benefits</span>
 
       {/* Title and Description Section */}

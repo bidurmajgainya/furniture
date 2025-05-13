@@ -48,7 +48,7 @@ const ProductSection = () => {
   ];
 
   return (
-    <section className="py-16 px-6 md:px-12 bg-gray-50">
+    <section className=" p-5 md:px-12 md:py-10  bg-gray-50">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
       

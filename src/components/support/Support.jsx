@@ -3,7 +3,7 @@ import { FiMessageSquare, FiMail, FiPhone } from 'react-icons/fi';
 
 const SupportSection = () => {
   return (
-    <div className="bg-gray-50 rounded-xl p-8 md:p-12 max-w-4xl mx-auto my-12">
+    <div className="bg-gray-50 rounded-xl px-8 md:px-12 max-w-4xl mx-auto my-12">
       <div className="flex flex-col md:flex-row gap-8 items-center">
         {/* Text Content */}
         <div className="md:w-2/3">

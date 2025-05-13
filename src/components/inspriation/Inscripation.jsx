@@ -3,7 +3,7 @@ import ImageGrid from './ImageGrid';
 
 const Inscripation = () => {
   return (
-    <div className="p-6 md:p-10">
+    <div className="px-5 md:px-10">
       <span className="font-medium text-[#dc6400] text-xl">Inspiration</span>
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mt-6">

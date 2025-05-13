@@ -10,7 +10,7 @@ import SupportSection from '../../components/support/Support'
 import Footer from '../../components/footer/Footer'
 const Home = () => {
   return (
-    <>
+    <div className='pt-10'>
     <Hero/>
     <Benifits/>
     <Product/>
@@ -19,7 +19,7 @@ const Home = () => {
     <Ambition/>
     <SupportSection/>
     <Footer/>
-    </>
+    </div>
   )
 }
 

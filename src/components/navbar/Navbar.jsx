@@ -9,6 +9,7 @@ import { MdOutlineClose } from 'react-icons/md';
 import { FaBars } from 'react-icons/fa6';
 import { FiSearch } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isCategoryHovered, setIsCategoryHovered] = useState(false);
@@ -20,12 +21,14 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Navbar */}
-      <div className="hidden xl:flex justify-between items-center py-4 px-10 bg-white shadow-lg sticky top-0 z-50">
+      <div className="hidden px-5 xl:flex justify-between items-center py-4 lg:px-10 bg-white shadow-lg sticky top-0 z-50">
         <div className="flex items-center">
-          <h1 className="text-3xl font-semibold text-gray-800">AIKE</h1>
+          <Link to="/">
+            <h1 className="text-3xl font-semibold text-gray-800">AIKE</h1>
+          </Link>
           <nav className="ml-20">
             <ul className="flex items-center space-x-8 font-medium text-gray-700">
-              <li 
+              <li
                 className="relative group"
                 onMouseEnter={() => setIsCategoryHovered(true)}
                 onMouseLeave={() => setIsCategoryHovered(false)}
@@ -33,9 +36,7 @@ const Navbar = () => {
                 <button className="flex items-center px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">
                   Category
                   <HiOutlineChevronDown
-                    className={`ml-1 transition-transform ${
-                      isCategoryHovered ? 'rotate-180' : ''
-                    }`}
+                    className={`ml-1 transition-transform ${isCategoryHovered ? 'rotate-180' : ''}`}
                   />
                 </button>
                 <AnimatePresence>
@@ -60,9 +61,30 @@ const Navbar = () => {
                   )}
                 </AnimatePresence>
               </li>
-              <li><a href="#" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">About us</a></li>
-              <li><a href="#" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Shop</a></li>
-              <li><a href="#" className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors">Contact us</a></li>
+              <li>
+                <Link
+                  to="/about"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  About us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/shop"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  Shop
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="px-3 py-2 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  Contact us
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -94,7 +116,7 @@ const Navbar = () => {
 
       {/* Mobile Navbar */}
       <div className="xl:hidden flex justify-between items-center p-4 bg-white shadow-lg sticky top-0 z-50">
-        <button 
+        <button
           onClick={() => setIsMobileMenuOpen(true)}
           className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
         >
@@ -123,7 +145,7 @@ const Navbar = () => {
           >
             {/* Overlay */}
             <div
-              className="absolute inset-0 bg-black bg-opacity-50"
+              className="absolute inset-0 bg-transparent bg-opacity-50"
               onClick={() => setIsMobileMenuOpen(false)}
             ></div>
 
@@ -133,12 +155,12 @@ const Navbar = () => {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="relative w-4/5 max-w-sm h-full bg-white shadow-xl z-50 flex flex-col"
+              className="relative w-full  h-full bg-white shadow-xl z-50 flex flex-col"
             >
               {/* Header */}
-              <div className="p-4 border-b flex justify-between items-center">
-                <h2 className="text-xl font-bold text-gray-800">Menu</h2>
-                <button 
+              <div className="p-4 border-b  flex justify-between items-center">
+                <h2 className="text-xl font-bold text-gray-800">AIKE</h2>
+                <button
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                 >
@@ -168,9 +190,7 @@ const Navbar = () => {
                     >
                       <span className="font-medium">Category</span>
                       <HiOutlineChevronDown
-                        className={`transition-transform ${
-                          mobileCategoryOpen ? 'rotate-180' : ''
-                        }`}
+                        className={`transition-transform ${mobileCategoryOpen ? 'rotate-180' : ''}`}
                       />
                     </button>
                     <AnimatePresence>
@@ -185,9 +205,10 @@ const Navbar = () => {
                           <ul className="space-y-2 py-2">
                             {categories.map((category, index) => (
                               <li key={index}>
-                                <a 
-                                  href="#" 
+                                <a
+                                  href="#"
                                   className="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                                  onClick={() => setIsMobileMenuOpen(false)} // Close the menu when a category is clicked
                                 >
                                   {category}
                                 </a>
@@ -199,19 +220,31 @@ const Navbar = () => {
                     </AnimatePresence>
                   </li>
                   <li>
-                    <a href="#" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                    <Link
+                      to="/about"
+                      className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                      onClick={() => setIsMobileMenuOpen(false)} // Close the menu when clicked
+                    >
                       About us
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                    <Link
+                      to="/shop"
+                      className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                      onClick={() => setIsMobileMenuOpen(false)} // Close the menu when clicked
+                    >
                       Shop
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium">
+                    <Link
+                      to="/contact"
+                      className="block p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                      onClick={() => setIsMobileMenuOpen(false)} // Close the menu when clicked
+                    >
                       Contact us
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
@@ -220,8 +253,8 @@ const Navbar = () => {
               <div className="p-4 border-t">
                 <ul className="space-y-3">
                   <li>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
                     >
                       <HiOutlineHeart className="mr-3 text-lg" />
@@ -230,8 +263,8 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li>
-                    <a 
-                      href="#" 
+                    <a
+                      href="#"
                       className="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
                     >
                       <HiOutlineUser className="mr-3 text-lg" />
