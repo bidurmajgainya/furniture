@@ -1,6 +1,7 @@
 import React from 'react';
 import { CiDeliveryTruck } from "react-icons/ci";
 import { HiOutlineClock } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 const Ambition = () => {
     return (
@@ -23,7 +24,7 @@ const Ambition = () => {
                     </p>
 
                     <button className='bg-black cursor-pointer text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-colors duration-300 font-medium'>
-                        Learn More
+                       <Link to="/"> Learn More</Link>
                     </button>
                 </div>
             </div>

@@ -40,7 +40,7 @@ const ContactItem = () => {
           </div>
           <h3 className="text-xl font-semibold mb-3">Visit Us</h3>
           <p className="text-gray-600 mb-2">123 Design District Ave</p>
-          <p className="text-gray-600">New York, NY 10001</p>
+          <p className="text-gray-600">Kathmandu,Nepal</p>
           <a 
             href="https://maps.google.com" 
             target="_blank" 
@@ -58,7 +58,7 @@ const ContactItem = () => {
           </div>
           <h3 className="text-xl font-semibold mb-3">Call Us</h3>
           <p className="text-gray-600 mb-2">Mon-Fri: 9am-6pm EST</p>
-          <p className="text-2xl font-medium">+1 (555) 123-4567</p>
+          <p className="text-2xl font-medium">+977 980000000</p>
           <a 
             href="tel:+15551234567" 
             className="inline-block mt-4 text-black font-medium hover:underline"

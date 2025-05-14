@@ -99,15 +99,15 @@ const Navbar = () => {
             />
           </div>
           <div className="flex items-center space-x-5">
-            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors relative">
+            <button className="p-2 rounded-full  cursor-pointer hover:bg-gray-100 transition-colors relative">
               <HiOutlineHeart className="text-xl text-gray-700" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+              {/* <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span> */}
             </button>
-            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors relative">
+            <button className="p-2 rounded-full cursor-pointer hover:bg-gray-100 transition-colors relative">
               <HiOutlineShoppingCart className="text-xl text-gray-700" />
-              <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">5</span>
+              {/* <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">5</span> */}
             </button>
-            <button className="p-2 rounded-full hover:bg-gray-100 transition-colors">
+            <button className="p-2 rounded-full cursor-pointer hover:bg-gray-100 transition-colors">
               <HiOutlineUser className="text-xl text-gray-700" />
             </button>
           </div>

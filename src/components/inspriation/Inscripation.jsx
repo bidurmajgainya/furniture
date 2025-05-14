@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageGrid from './ImageGrid';
+import { Link } from 'react-router-dom';
 
 const Inscripation = () => {
   return (
@@ -21,7 +22,7 @@ const Inscripation = () => {
         
         <div className="flex justify-center mt-8">
           <button className="bg-transparent border border-black cursor-pointer text-black px-8 py-3 rounded-full hover:bg-black hover:text-white transition-colors duration-300 font-medium">
-            Learn More
+          <Link to ="/about">  Learn More</Link>
           </button>
         </div>
       </div>

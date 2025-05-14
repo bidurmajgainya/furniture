@@ -1,8 +1,8 @@
 import { CiDeliveryTruck } from "react-icons/ci";
 import React, { Suspense, lazy } from 'react';
 import { HiOutlineClock } from "react-icons/hi2";
-
 // Lazy load Image component
+import { Link } from "react-router-dom";
 const BentoImage = lazy(() => import("../Image/Image"));
 
 const Hero = () => {
@@ -26,7 +26,7 @@ const Hero = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
             <button className='bg-black text-white px-8 cursor-pointer py-3 rounded-full hover:bg-gray-800 transition-colors duration-300 font-medium'>
-              Shop Now
+             <Link to ="/shop"> Shop Now</Link>
             </button>
             
             <div className="flex flex-wrap gap-6">

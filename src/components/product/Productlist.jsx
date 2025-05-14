@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiHeart, FiShoppingCart, FiStar } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 const ProductSection = () => {
   const products = [
@@ -50,13 +51,10 @@ const ProductSection = () => {
   return (
     <section className=" p-5 md:px-12 md:py-10  bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-      
-
-        {/* Product Grid */}
+     
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+            <div key={product.id} className="group relative cursor-pointer bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
               {/* Product Badges */}
               <div className="absolute top-4 left-4 z-10 flex gap-2">
                 {product.isNew && (
@@ -117,7 +115,7 @@ const ProductSection = () => {
                       <span className="text-gray-400 line-through ml-2">${product.originalPrice}</span>
                     )}
                   </div>
-                  <button className="p-2 bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors">
+                  <button className="p-2 cursor-pointer bg-gray-900 text-white rounded-full hover:bg-gray-700 transition-colors">
                     <FiShoppingCart />
                   </button>
                 </div>
@@ -129,7 +127,7 @@ const ProductSection = () => {
         {/* View All Button */}
         <div className="text-center mt-12">
           <button className="px-8 py-3 border-2 border-gray-900 cursor-pointer text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors duration-300">
-            View All Products
+           <Link to="/shop"> View All Products</Link>
           </button>
         </div>
       </div>
