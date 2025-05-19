@@ -107,9 +107,9 @@ const Navbar = () => {
               <HiOutlineShoppingCart className="text-xl text-gray-700" />
               {/* <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">5</span> */}
             </button>
-            <button className="p-2 rounded-full cursor-pointer hover:bg-gray-100 transition-colors">
+           <Link to ="/login"> <button className="p-2 rounded-full cursor-pointer hover:bg-gray-100 transition-colors">
               <HiOutlineUser className="text-xl text-gray-700" />
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>
@@ -263,13 +263,13 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      to= "\login"
                       className="flex items-center p-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
                     >
                       <HiOutlineUser className="mr-3 text-lg" />
                       Account
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

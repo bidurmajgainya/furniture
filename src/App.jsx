@@ -1,19 +1,22 @@
 // src/App.js
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import ScrollToTop from './components/scrollToTop/ScrollToTop';
 import AppRoutes from './router/Router';
 function App() {
+  const location= useLocation();
+  const hideNavbarRoutes  = ["/login","/signup"];
+   const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname.toLowerCase());
   return (
-    <Router>
+  
       <div className="app">
          <ScrollToTop />
-        <Navbar />
-        <main className=""> {/* Add padding-top to account for fixed navbar */}
+ {!shouldHideNavbar && <Navbar />}
+        <main className=""> 
           <AppRoutes />
         </main>
       </div>
-    </Router>
+ 
   );
 }
 
