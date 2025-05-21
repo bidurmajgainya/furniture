@@ -87,7 +87,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4">
           <Link to="/cart" className="p-2 rounded-full hover:bg-gray-100 transition-colors relative" aria-label="Cart">
             <HiOutlineShoppingCart className="text-xl text-gray-700" />
-            <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"></span>
+          
           </Link>
           <Link to="/login" className="p-2 rounded-full hover:bg-gray-100 transition-colors" aria-label="User account">
             <HiOutlineUser className="text-xl text-gray-700" />
@@ -188,9 +188,7 @@ const Navbar = () => {
                     >
                       <HiOutlineHeart className="mr-3 text-lg" />
                       Wishlist
-                      <span className="ml-auto bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                        
-                      </span>
+                    
                     </Link>
                   </li>
                   <li>
