@@ -189,7 +189,7 @@ const Navbar = () => {
                       <HiOutlineHeart className="mr-3 text-lg" />
                       Wishlist
                       <span className="ml-auto bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                        3
+                        
                       </span>
                     </Link>
                   </li>
