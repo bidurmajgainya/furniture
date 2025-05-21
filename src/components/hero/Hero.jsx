@@ -2,6 +2,7 @@ import { CiDeliveryTruck } from "react-icons/ci";
 import React, { Suspense, lazy } from 'react';
 import { HiOutlineClock } from "react-icons/hi2";
 // Lazy load Image component
+import { motion } from "motion/react"
 import { Link } from "react-router-dom";
 const BentoImage = lazy(() => import("../Image/Image"));
 
@@ -13,7 +14,10 @@ const Hero = () => {
   ];
 
   return (
-    <div className="container mx-auto pb-10 lg:pb-30 px-10">
+    <motion.div
+    
+    className="container mx-auto pb-10 lg:pb-30 px-10">
+
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
         {/* Text Section */}
         <div className="lg:w-1/2">
@@ -64,7 +68,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
