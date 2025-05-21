@@ -60,7 +60,7 @@ const CartGrid = () => {
           <span className="mr-2">Home</span>
         </Link>
         <span className="mr-2">›</span>
-        <span className="font-medium">CartGrid</span>
+        <span className="font-medium">Cart</span>
       </div>
 
       <h1 className="text-3xl font-bold mb-8">YOUR CART</h1>
