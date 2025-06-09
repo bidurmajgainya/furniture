@@ -131,7 +131,7 @@ const OurStory = () => {
 
         {/* CTA Button */}
         <div className="text-center mt-16">
-          <button className="bg-black text-white px-8 py-3 rounded-full hover:bg-neutral-800 transition-colors font-medium inline-flex items-center gap-2">
+          <button className="bg-black cursor-pointer text-white px-8 py-3 rounded-full hover:bg-neutral-800 transition-colors font-medium inline-flex items-center gap-2">
             <FiArrowRight className="text-white text-lg" />
             Explore Our Collections
           </button>

@@ -34,11 +34,11 @@ const Hero = () => {
             </button>
             
             <div className="flex flex-wrap gap-6">
-              <span className='flex gap-2 items-center text-gray-700'>
+              <span className='flex gap-2 cursor-pointer items-center text-gray-700'>
                 <CiDeliveryTruck className="text-xl" />
                 Free Delivery
               </span>
-              <span className='flex gap-2 items-center text-gray-700'>
+              <span className='flex gap-2 cursor-pointer items-center text-gray-700'>
                 <HiOutlineClock className="text-xl" />
                 Always On-Time
               </span>
@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Image Grid Section */}
+      
         <div className="lg:w-1/2">
           <div className="grid grid-cols-2 gap-3 h-[500px]">
             {images.map((img, index) => (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'; 
 import { FiFilter, FiStar, FiHeart, FiShoppingCart } from 'react-icons/fi';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
@@ -51,8 +51,8 @@ const ShopPage = () => {
   ];
 
   return (
-    <div className="bg-white">
-      <div className="bg-gray-100 py-16 px-5 md:px-10 text-center">
+    <div className="bg-white ">
+      <div className="bg-gray-100 py-10 px-5 md:px-10 text-center">
         <h1 className="text-3xl md:text-4xl font-bold mb-3">Shop Our Collection</h1>
         <p className="text-gray-600">Handcrafted furniture for every space in your home</p>
       </div>
@@ -64,7 +64,7 @@ const ShopPage = () => {
           <div className="md:hidden relative">
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="border rounded-lg px-3 py-2 text-gray-700 flex items-center gap-2"
+              className="border rounded-lg px-3 py-2 text-gray-700 flex items-center gap-2 cursor-pointer"
             >
               Category {showFilters ? <FaChevronUp /> : <FaChevronDown />}
             </button>
@@ -73,7 +73,7 @@ const ShopPage = () => {
                 {categories.map((category) => (
                   <li key={category.value}>
                     <button
-                      className={`block w-full text-left px-4 py-2 ${selectedCategory === category.value ? 'bg-black text-white' : 'hover:bg-gray-100'}`}
+                      className={`block w-full text-left px-4 py-2 cursor-pointer ${selectedCategory === category.value ? 'bg-black text-white' : 'hover:bg-gray-100'}`}
                       onClick={() => {
                         setSelectedCategory(category.value);
                         setShowFilters(false);
@@ -112,7 +112,7 @@ const ShopPage = () => {
                 {categories.map((category) => (
                   <li key={category.value}>
                     <button
-                      className={`w-full text-left px-3 py-2 rounded ${selectedCategory === category.value ? 'bg-black text-white' : 'hover:bg-gray-100'}`}
+                      className={`w-full text-left px-3 py-2 rounded cursor-pointer ${selectedCategory === category.value ? 'bg-black text-white' : 'hover:bg-gray-100'}`}
                       onClick={() => setSelectedCategory(category.value)}
                     >
                       {category.label}
@@ -133,7 +133,7 @@ const ShopPage = () => {
                       {product.isNew && <span className="bg-[#dc6400] text-white text-xs px-2 py-1 rounded-full">New</span>}
                       {product.isBestSeller && <span className="bg-black text-white text-xs px-2 py-1 rounded-full">Bestseller</span>}
                     </div>
-                    <button className="absolute top-3 right-3 z-10 p-2 bg-white rounded-full shadow hover:bg-gray-100">
+                    <button className="absolute top-3 right-3 z-10 p-2 bg-white rounded-full shadow hover:bg-gray-100 cursor-pointer">
                       <FiHeart className="text-gray-700" />
                     </button>
                     <div className="aspect-square overflow-hidden">
@@ -154,7 +154,7 @@ const ShopPage = () => {
                         {product.colors.map((color, i) => (
                           <button
                             key={i}
-                            className="w-5 h-5 rounded-full border border-gray-200"
+                            className="w-5 h-5 rounded-full border border-gray-200 cursor-pointer"
                             style={{ backgroundColor: color }}
                             aria-label={`Color option ${i + 1}`}
                           />
@@ -165,7 +165,7 @@ const ShopPage = () => {
                           <span className="font-bold text-lg">${product.price}</span>
                           {product.originalPrice && <span className="text-gray-400 line-through ml-2">${product.originalPrice}</span>}
                         </div>
-                        <button className="p-2 bg-gray-900 text-white rounded-full hover:bg-gray-700">
+                        <button className="p-2 bg-gray-900 text-white rounded-full hover:bg-gray-700 cursor-pointer">
                           <FiShoppingCart />
                         </button>
                       </div>

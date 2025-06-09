@@ -35,13 +35,13 @@ const Summary = ({ subtotal, discount, deliveryFee, total }) => {
               placeholder="Add promo code" 
               className="flex-1 px-4 py-2 focus:outline-none"
             />
-            <button className="px-4 py-2 bg-gray-800 text-white hover:bg-gray-700">
+            <button className="px-4 cursor-pointer py-2 bg-gray-800 text-white hover:bg-gray-700">
               Apply
             </button>
           </div>
         </div>
 
-        <button className="w-full py-3 bg-black text-white font-medium rounded hover:bg-gray-800 transition-colors">
+        <button className="w-full py-3 cursor-pointer bg-black text-white font-medium rounded hover:bg-gray-800 transition-colors">
           Proceed to Checkout →
         </button>
       </div>

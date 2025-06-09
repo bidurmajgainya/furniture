@@ -55,7 +55,7 @@ const WishlistGrid = () => {
           <p className="text-xl text-gray-700 mb-4">Your wishlist is empty.</p>
           <Link
             to="/"
-            className="inline-block bg-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-700 transition-colors"
+            className="inline-block bg-orange-600 text-white px-6 py-3 cursor-pointer rounded-lg font-medium hover:bg-orange-700 transition-colors"
           >
             Go to Shopping
           </Link>
@@ -110,13 +110,13 @@ const WishlistGrid = () => {
                 <div className="mt-4 sm:mt-0 sm:ml-6 sm:w-48 flex sm:flex-col justify-between sm:justify-center gap-3">
                   <button
                     onClick={() => handleMoveToCart(item.id)}
-                    className="px-4 py-2 bg-black text-white text-sm font-medium rounded-lg hover:bg-transparent hover:text-black border-1 border-bborder-l-black transition-colors flex items-center justify-center gap-2"
+                    className="px-4 py-2 cursor-pointer bg-black text-white text-sm font-medium rounded-lg hover:bg-transparent hover:text-black border-1 border-bborder-l-black transition-colors flex items-center justify-center gap-2"
                   >
                     Add to Cart
                   </button>
                   <button
                     onClick={() => handleRemove(item.id)}
-                    className="px-4 py-2 border border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                    className="px-4 py-2 border cursor-pointer border-gray-300 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
                   >
                     Remove
                   </button>

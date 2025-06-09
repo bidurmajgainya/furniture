@@ -24,7 +24,7 @@ const CartBox = ({ items, onQuantityChange, onDelete }) => {
                 </div>
                 <button 
                   onClick={() => onDelete(item.id)} 
-                  className="text-black  text-lg"
+                  className="text-black cursor-pointer text-lg"
                   title="Remove item"
                 >
                   <FaTrash />
@@ -35,14 +35,14 @@ const CartBox = ({ items, onQuantityChange, onDelete }) => {
                 <p className="text-lg font-semibold">${item.price.toFixed(2)}</p>
                 <div className="flex items-center border border-gray-300 rounded">
                   <button 
-                    className="px-3 py-1 text-gray-600 hover:bg-gray-100"
+                    className="px-3 cursor-pointer  py-1 text-gray-600 hover:bg-gray-100"
                     onClick={() => onQuantityChange(item.id, item.quantity - 1)}
                   >
                     -
                   </button>
                   <span className="px-3 py-1">{item.quantity}</span>
                   <button 
-                    className="px-3 py-1 text-gray-600 hover:bg-gray-100"
+                    className="px-3 cursor-pointer  py-1 text-gray-600 hover:bg-gray-100"
                     onClick={() => onQuantityChange(item.id, item.quantity + 1)}
                   >
                     +
